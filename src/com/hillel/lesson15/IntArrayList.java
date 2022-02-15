@@ -36,6 +36,29 @@ public class IntArrayList implements IntList {
         return toArray;
     }
 
+    /**
+     * Insets a new element into specific index. And shifts other lements to the right.
+     *
+     * @param index - where to paste the new element
+     * @param value - what value this element should have
+     */
+    @Override
+    public void pasteElement(int index, int value) {
+        int[] tempArray = new int[array.length + 1];
+        System.arraycopy(array, 0, tempArray, 0, index);
+        System.arraycopy(array, index, tempArray, index + 1, array.length - index);
+        tempArray[index] = value;
+        array = tempArray;
+    }
+
+    @Override
+    public void deleteElement(int index) {
+        int[] tempArray = new int[array.length - 1];
+        System.arraycopy(array, 0, tempArray, 0, index);
+        System.arraycopy(array, index + 1, tempArray, index, array.length - index - 1);
+        array = tempArray;
+    }
+
     @Override
     public String toString() {
         return "IntArrayList{" +

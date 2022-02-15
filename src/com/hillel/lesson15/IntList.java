@@ -12,4 +12,8 @@ public interface IntList {
 
     int[] toArray();
 
+    void pasteElement(int index, int value);
+
+    void deleteElement(int index);
+
 }

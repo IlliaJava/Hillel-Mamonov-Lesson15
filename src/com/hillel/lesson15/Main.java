@@ -33,9 +33,14 @@ public class Main {
         System.out.println("Демонстрация toString: " + list1);
         System.out.println("Размер данного IntArrayList: " + list1.size());
         System.out.println("Значние элемента под индексом '3': " + list1.get(3));
-        System.out.println("Демонстрация toArray: " + Arrays.toString(list1.toArray()));
         bubbleSort(list1);
         System.out.println("Отсортированный IntArrayList: " + list1);
+        System.out.println("Демонстрация toArray: " + Arrays.toString(list1.toArray()));
+
+        list1.pasteElement(4, 8);
+        list1.pasteElement(4, 6);
+        list1.deleteElement(0);
+        System.out.println("\nДемонстрация вставки и удаления: " + Arrays.toString(list1.toArray()));
     }
 
     private static void bubbleSort(IntList array) {
